@@ -18,6 +18,14 @@ import RoleDetails from './pages/RoleDetails';
 import RoleCreate from './pages/RoleCreate';
 import RoleDelete from './pages/RoleDelete';
 import RoleUpdate from './pages/RoleUpdate';
+import UserList from './pages/UserList';
+import UpdateUser from './pages/UserUpdate';
+import UserDelete from './pages/UserDelete';
+import PromoteToAdmin from './pages/PromoteToAdmin';
+import UserDetails from './pages/UserDetails';
+import PromoteToModerator from './pages/PromoteToModerator';
+import UserDemote from './pages/UserDemote';
+import ChangeUserRole from './pages/UserRoleChange';
 
 const App = () => {
   return (
@@ -37,14 +45,24 @@ const App = () => {
         <Route path="/profile/reset-password" element={< PasswordReset />} />
 
         {/* role and permission routers */}
-        <Route path="admin/permissions" element={< Permissions />} />
-        <Route path="admin/permission/:id" element={< PermissionDetails />} />
-        <Route path="admin/roles" element={< Roles />} />
-        <Route path="admin/role/:id" element={< RoleDetails />} />
-        <Route path="admin/role/create" element={< RoleCreate />}/>
-        <Route path="admin/roles/delete" element={< RoleDelete />}/>
-        <Route path="admin/roles/update" element={< RoleUpdate />}/>
-        
+        <Route path="/admin/permissions" element={< Permissions />} />
+        <Route path="/admin/permission/:id" element={< PermissionDetails />} />
+        <Route path="/admin/roles" element={< Roles />} />
+        <Route path="/admin/role/:id" element={< RoleDetails />} />
+        <Route path="/admin/role/create" element={< RoleCreate />}/>
+        <Route path="/admin/roles/delete" element={< RoleDelete />}/>
+        <Route path="/admin/roles/update" element={< RoleUpdate />}/>
+
+        {/* user routers */}
+        <Route path="/users" element={< UserList />} />
+        <Route path="/user/edit" element={< UpdateUser />} />
+        <Route path="/user/delete" element={< UserDelete />} />
+        <Route path="/users/promote/admin" element={< PromoteToAdmin />} />
+        <Route path="/users/detail" element={< UserDetails />} />
+        <Route path="/users/promote/moderator" element={< PromoteToModerator />}/>
+        <Route path="/user/demote" element={< UserDemote />} />
+        <Route path="users/change-role" element={< ChangeUserRole />} />
+        <Route path="users/update" element={< UpdateUser />} />
       </Routes>
     </>
   );

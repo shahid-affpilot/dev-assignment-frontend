@@ -17,8 +17,8 @@ const ModeratorPanel = () => {
       <p className="text-gray-500">Moderate users and content</p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <ActionItem title="View Users" description="Browse all user profiles" to="/moderator/users" />
-        <ActionItem title="Delete User" description="Remove users if needed" to="/moderator/delete-user" />
+        <ActionItem title="View Users" description="Browse all user profiles" to="/users/detail" />
+        <ActionItem title="Delete User" description="Remove users if needed" to="/user/delete" />
       </div>
     </div>
   );

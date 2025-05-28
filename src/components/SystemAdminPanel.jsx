@@ -17,7 +17,7 @@ const SystemAdminPanel = () => {
       <p className="text-gray-500">Top-level platform operations</p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <ActionItem title="Promote to Admin" description="Upgrade user to admin role" to="/system-admin/promote-admin" />
+        <ActionItem title="Promote to Admin" description="Upgrade user to admin role" to="/users/promote/admin" />
       </div>
     </div>
   );

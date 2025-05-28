@@ -17,11 +17,11 @@ const AdminPanel = () => {
       <p className="text-gray-500">Manage users, roles, and permissions</p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <ActionItem title="List Users" description="See all users" to="/admin/users" />
-        <ActionItem title="Update User" description="Edit user data" to="/admin/user/edit" />
-        <ActionItem title="Change Role" description="Modify user roles" to="/admin/user/change-role" />
-        <ActionItem title="Promote to Moderator" description="Upgrade user role" to="/admin/user/promote-moderator" />
-        <ActionItem title="Demote Role" description="Lower user privileges" to="/admin/user/demote-role" />
+        <ActionItem title="List Users" description="See all users" to="/users" />
+        <ActionItem title="Update User" description="Edit user data" to="/users/update" />
+        <ActionItem title="Change Role" description="Modify user roles" to="/users/change-role" />
+        <ActionItem title="Promote to Moderator" description="Upgrade user role" to="/users/promote/moderator" />
+        <ActionItem title="Demote Role" description="Lower user privileges" to="/user/demote" />
         <ActionItem title="All Roles" description="View roles in system" to="/admin/roles" />
         {/*<ActionItem title="Role Details" description="Inspect role info" to="/admin/roles/details" /> */}
         <ActionItem title="Create Role" description="Add new role" to="/admin/role/create" />
