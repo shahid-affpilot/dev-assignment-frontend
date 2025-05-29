@@ -66,22 +66,6 @@ const PasswordReset = () => {
                 onChange={handleChange}
               />
             </div>
-            
-            <div>
-              <label htmlFor="new_password" className="block text-sm font-medium text-gray-700">
-                New Password
-              </label>
-              <input
-                id="new_password"
-                name="new_password"
-                type="password"
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Enter new password"
-                value={formData.new_password}
-                onChange={handleChange}
-              />
-            </div>
           </div>
 
           <button

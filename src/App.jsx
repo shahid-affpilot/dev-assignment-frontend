@@ -26,6 +26,8 @@ import UserDetails from './pages/UserDetails';
 import PromoteToModerator from './pages/PromoteToModerator';
 import UserDemote from './pages/UserDemote';
 import ChangeUserRole from './pages/UserRoleChange';
+import RegistrationVerify from './pages/RegistrationVerify';
+import SetNewPassword from './pages/SetNewPassword';
 
 const App = () => {
   return (
@@ -35,14 +37,16 @@ const App = () => {
         {/* profile/auth routers */}
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/verify" element={<RegistrationVerify />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<PasswordReset />} />
+        <Route path="/verify/password-reset" element={<SetNewPassword />} />
         <Route path="/dashboard" element={<Deshboard />} />
         <Route path="/profile/view" element={<ProfileView />} />
         <Route path="/profile/permissions" element={<ProfilePermissions />} />
         <Route path="/profile/update" element={<ProfileUpdate />} />
         <Route path="/profile/delete-request" element={<ProfileDeleteRequest />} />
-        <Route path="/profile/resend-verification" element={< ResendVerification />} />
-        <Route path="/profile/reset-password" element={< PasswordReset />} />
+        <Route path="/profile/resend-verification" element={<ResendVerification />} />
 
         {/* role and permission routers */}
         <Route path="/admin/permissions" element={< Permissions />} />
@@ -63,6 +67,7 @@ const App = () => {
         <Route path="/user/demote" element={< UserDemote />} />
         <Route path="users/change-role" element={< ChangeUserRole />} />
         <Route path="users/update" element={< UpdateUser />} />
+        {/* localhost:8080/api/v1/auth/verify */}
       </Routes>
     </>
   );
