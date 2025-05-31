@@ -15,7 +15,7 @@ const PermissionDetails = () => {
         const response = await axios.get(`http://localhost:8080/api/v1/permission/${id}`, {
           withCredentials: true
         });
-        if (response.data.status === "200") {
+        if (response.data.status === 200) {
           setPermission(response.data.data);
           setMessage(response.data.message);
         }

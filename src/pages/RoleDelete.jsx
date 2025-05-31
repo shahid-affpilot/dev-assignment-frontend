@@ -17,7 +17,7 @@ const RoleDelete = () => {
         const response = await axios.get('http://localhost:8080/api/v1/roles', {
           withCredentials: true
         });
-        if (response.data.status === "202") {
+        if (response.data.status === 202) {
           setRoles(response.data.data);
         }
         setLoading(false);
@@ -45,7 +45,7 @@ const RoleDelete = () => {
         { withCredentials: true }
       );
 
-      if (response.data.status === "200") {
+      if (response.data.status === 200) {
         navigate('/admin/roles', {
           state: { message: response.data.message }
         });

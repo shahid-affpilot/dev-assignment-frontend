@@ -21,7 +21,7 @@ const UserPanel = () => {
         <ActionItem title="View Permissions" description="See your personal permission" to="/profile/permissions" />
         <ActionItem title="Update Profile" description="Edit your name, email, etc." to="/profile/update" />
         <ActionItem title="Request Deletion" description="Ask to delete your account" to="/profile/delete-request" />
-        <ActionItem title="Reset Password" description="Change your password" to="/profile/reset-password" />
+        <ActionItem title="Reset Password" description="Change your password" to="/reset-password" />
         <ActionItem title="Resend Verification" description="Send verification email again" to="/profile/resend-verification" />
       </div>
     </div>

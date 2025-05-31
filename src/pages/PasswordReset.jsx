@@ -8,6 +8,7 @@ const PasswordReset = () => {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -18,6 +19,7 @@ const PasswordReset = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await axios.post('http://localhost:8080/api/v1/auth/password-reset', formData);
       setMessage(response.data.message);
@@ -27,6 +29,8 @@ const PasswordReset = () => {
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');
       setMessage('');
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -72,7 +76,7 @@ const PasswordReset = () => {
             type="submit"
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            Reset Password
+            {loading ? "Sending" : "Reset Password"}
           </button>
         </form>
       </div>

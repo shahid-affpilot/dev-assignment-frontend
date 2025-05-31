@@ -29,7 +29,7 @@ const RegistrationVerify = () => {
         );
 
         const { status, message } = res.data;
-        if (status === "202") {
+        if (status === 200) {
           setMessage(message || "Email verified successfully.");
           setStatus("success");
         } else {

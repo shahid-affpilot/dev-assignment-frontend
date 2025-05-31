@@ -30,7 +30,8 @@ const RoleCreate = () => {
         { withCredentials: true }
       );
 
-      if (response.data.status === "201") {
+      if (response.data.status === 201) {
+        console.log(response)
         navigate('/admin/roles', { 
           state: { message: response.data.message }
         });

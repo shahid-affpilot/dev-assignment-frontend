@@ -16,7 +16,7 @@ const Permissions = () => {
           withCredentials: true
         });
         // Change the condition to check for "200" instead of "success"
-        if (response.data.status === "200") {
+        if (response.data.status === 200) {
           setPermissions(response.data.data);
           setMessage(response.data.message);
         }

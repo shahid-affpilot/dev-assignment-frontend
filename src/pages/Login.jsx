@@ -36,7 +36,7 @@ const Login = () => {
             );
 
             // Store user_type and user_id in localStorage
-            localStorage.setItem('user_type', res.data.user_type);
+            localStorage.setItem('user_type', res.data.data.user_type);
             localStorage.setItem('user_id', res.data.data.user_id);
             localStorage.setItem('email', formData.email);
 

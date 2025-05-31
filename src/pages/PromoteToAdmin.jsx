@@ -24,7 +24,7 @@ const PromoteToAdmin = () => {
       );
 
       const { status, message } = response.data;
-      if (status === "202") {
+      if (status === 200) {
         setMessage(message || "User promoted to admin successfully.");
         setError("");
       } else {

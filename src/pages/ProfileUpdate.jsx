@@ -17,7 +17,8 @@ const ProfileUpdate = () => {
   useEffect(() => {
     axios.get('http://localhost:8080/api/v1/me', { withCredentials: true })
       .then(res => {
-        const { id, username, first_name, last_name } = res.data;
+        console.log(res)
+        const { id, username, first_name, last_name } = res.data.data;
         setForm({ username, first_name, last_name });
         setUserId(id);
         setLoading(false);

@@ -22,7 +22,7 @@ const RoleUpdate = () => {
         const response = await axios.get(`http://localhost:8080/api/v1/roles/${id}`, {
           withCredentials: true
         });
-        if (response.data.status === "202") {
+        if (response.data.status === 200) {
           const { name, description } = response.data.data;
           setFormData({ name, description });
         }
@@ -40,12 +40,12 @@ const RoleUpdate = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-
+    console.log(roleId)
     try {
       const response = await axios.get(`http://localhost:8080/api/v1/roles/${roleId}`, {
         withCredentials: true
       });
-      if (response.data.status === "202") {
+      if (response.data.status === 200) {
         const { name, description } = response.data.data;
         setFormData({ name, description });
         setShowForm(true);
@@ -76,7 +76,8 @@ const RoleUpdate = () => {
         { withCredentials: true }
       );
 
-      if (response.data.status === "202") {
+      console.log(response)
+      if (response.data.status === 200) {
         navigate('/admin/roles', {
           state: { message: response.data.message }
         });
@@ -182,6 +183,7 @@ const RoleUpdate = () => {
                 Back
               </button>
               <button
+                onSubmit={handleSubmit}
                 type="submit"
                 disabled={updating}
                 className={`px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 ${

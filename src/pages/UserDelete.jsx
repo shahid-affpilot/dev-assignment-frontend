@@ -22,7 +22,7 @@ const UserDelete = () => {
         });
 
         const { status, message } = response.data;
-        if (status === "202") {
+        if (status === 200) {
             setMessage(message || "User deleted successfully.");
             setError("");
         } else {

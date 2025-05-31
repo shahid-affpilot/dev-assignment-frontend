@@ -22,7 +22,7 @@ const UserDetails = () => {
 
       const { status, message, data } = response.data;
 
-      if (status === "202") {
+      if (status === 200) {
         setUserData(data);
         setMessage(message || "User found.");
         setError("");

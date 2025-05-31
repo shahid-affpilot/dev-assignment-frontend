@@ -25,7 +25,7 @@ const ChangeUserRole = () => {
       );
 
       const { status, message } = response.data;
-      if (status === "202") {
+      if (status === 200) {
         setMessage(message || "User role updated successfully.");
         setError("");
       } else {

@@ -24,7 +24,7 @@ const ResendVerification = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                credentials: 'include', // This is the correct way to include credentials
+                credentials: 'include',
                 body: JSON.stringify({ email }),
             })
 
@@ -64,7 +64,7 @@ const ResendVerification = () => {
             }
 
         } catch (error) {
-
+            console.log(response)
         } finally {
             setLoading(false)
         }

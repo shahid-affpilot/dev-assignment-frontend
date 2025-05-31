@@ -15,7 +15,7 @@ const RoleDetails = () => {
         const response = await axios.get(`http://localhost:8080/api/v1/roles/${id}`, {
           withCredentials: true
         });
-        if (response.data.status === "202") {
+        if (response.data.status === 200) {
           setRole(response.data.data);
           setMessage(response.data.message);
         }

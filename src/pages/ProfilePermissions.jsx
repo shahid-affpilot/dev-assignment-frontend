@@ -12,7 +12,7 @@ const ProfilePermissions = () => {
         const response = await axios.get('http://localhost:8080/api/v1/me/permissions', {
           withCredentials: true
         });
-        if (response.data.status === 'success') {
+        if (response.data.status === 200) {
           setPermissions(response.data.data);
         }
         setLoading(false);

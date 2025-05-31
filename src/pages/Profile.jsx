@@ -11,7 +11,7 @@ const ProfileView = () => {
       withCredentials: true,
     })
       .then(response => {
-        setUser(response.data);    
+        setUser(response.data.data);    
         console.log(response.data);
         setLoading(false);
       })

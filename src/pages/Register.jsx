@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';  // Add this import
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const navigate = useNavigate();  // Add this hook
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -26,9 +27,10 @@ const Register = () => {
     e.preventDefault();
     setSuccessMsg('');
     setErrorMsg('');
+    setLoading(true)
     try {
       const res = await axios.post('http://localhost:8080/api/v1/auth/register', formData);
-      setSuccessMsg('Registration Successful!');
+      setSuccessMsg('Registration Successful! Check your mail to verify.');
       setFormData({
         username: '',
         email: '',
@@ -36,12 +38,14 @@ const Register = () => {
         first_name: '',
         last_name: '',
       });
-      // Add setTimeout to show success message before redirecting
+
       setTimeout(() => {
-        navigate('/login');  // Navigate to login page after 2 seconds
+        navigate('/login');
       }, 2000);
     } catch (err) {
       setErrorMsg(err.response?.data?.error || 'Something went wrong');
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -95,6 +99,7 @@ const Register = () => {
               placeholder="Username"
               onChange={handleChange}
               value={formData.username}
+              disabled={loading}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -104,6 +109,7 @@ const Register = () => {
               placeholder="Email"
               onChange={handleChange}
               value={formData.email}
+              disabled={loading}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -113,6 +119,7 @@ const Register = () => {
               placeholder="Password"
               onChange={handleChange}
               value={formData.password}
+              disabled={loading}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -121,6 +128,7 @@ const Register = () => {
               placeholder="First Name"
               onChange={handleChange}
               value={formData.first_name}
+              disabled={loading}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -129,6 +137,7 @@ const Register = () => {
               placeholder="Last Name"
               onChange={handleChange}
               value={formData.last_name}
+              disabled={loading}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -136,7 +145,7 @@ const Register = () => {
               type="submit"
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Register
+              {loading ? "Registering" : "Register"}
             </button>
           </form>
         </div>

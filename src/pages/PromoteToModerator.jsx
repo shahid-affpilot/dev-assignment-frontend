@@ -24,7 +24,7 @@ const PromoteToModerator = () => {
       );
 
       const { status, message } = response.data;
-      if (status === "202") {
+      if (status === 200) {
         setMessage(message || "User promoted to moderator successfully.");
         setError("");
       } else {

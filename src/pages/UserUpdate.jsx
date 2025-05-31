@@ -34,7 +34,7 @@ const UpdateUser = () => {
       );
 
       const { status, data, message } = response.data;
-      if (status === "202") {
+      if (status === 200) {
         setUpdatedUser(data);
         setMessage(message || "User updated successfully.");
         setError("");
